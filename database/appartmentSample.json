@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "address": "136 Avenue des Champs Elysées",
+        "city": "Paris"
+    },
+    {
+        "id": 2,
+        "address": "11 Avenue Foch",
+        "city": "Paris"
+    },
+    {
+        "id": 3,
+        "address": "136 Rue de Rivoli",
+        "city": "Paris"
+    },
+    {
+        "id": 4,
+        "address": "55 rue du faubourg Saint Honoré",
+        "city": "Paris"
+    }
+]
