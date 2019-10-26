@@ -1,17 +1,18 @@
-const Appartment = require('./appartment')
-
+const appartmentRepository = require('./appartmentRepository')
 const index = (req,res) => {
-    const data = Appartment.list()
-    res.json(data)
+    const appartments = appartmentRepository.list()
+    res.json(appartments) 
 }
 
-const show = (req,res) => {
-    const appartment = Appartment.get(req.params.id)
+const show = async (req,res) => {
+    const appartment = await appartmentRepository.get(req.params.id - 1)
+    
     res.json(appartment)
 }
 
 const create = (req,res) => {
-    const appartments = Appartment.insert(req.body)
+    appartmentRepository.insert(req.body)
+    const appartments = appartmentRepository.list()
     res.json(appartments)
 }
 
