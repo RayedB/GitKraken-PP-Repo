@@ -1,17 +1,16 @@
-const data = require('../../database/appartmentSample.json')
+const mongoose = require('mongoose');
 
+const Schema = mongoose.Schema;
 
-const list = () => {
-    return data
-}
+const appartmentSchema = new Schema({
+    address: String,
+    zip: String,
+    neighborhood: String,
+    size: Number,
+    balcony: {type: Boolean, default: false},
+    city: { type: String, required: true}
+})
 
-const get = (id) => {
-    return data[id]
-} 
+const Appartment = mongoose.model('Appartments', appartmentSchema)
 
-const insert = (appartment) =>{
-    data.push(appartment)
-    return data
-} 
-
-module.exports = {list,get,insert}
+module.exports = Appartment

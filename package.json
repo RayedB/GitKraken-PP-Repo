@@ -4,6 +4,7 @@
   "description": "GitKraken PP Repo",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "jest --config jest.config.js"
   },
   "repository": {
@@ -19,7 +20,8 @@
   "dependencies": {
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.7.7"
   },
   "devDependencies": {
     "jest": "^24.9.0",

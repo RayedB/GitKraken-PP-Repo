@@ -1,12 +1,19 @@
 const express = require('express')
 const app = express()
+const port = process.env.PORT || 8080
 const routes = require('./app/routes')
 const bodyParser = require('body-parser')
+const connectDB = require('./database/database')
 
-app.use(bodyParser.json())
+    connectDB()
 
-app.use(routes)
+    app.use(bodyParser.json())
 
-app.listen(8080, ()=> {
-    console.log("server up and running")
-})
+    app.use(routes)
+
+    app.listen(port, ()=> {
+        console.log("server up and running")
+    })
+
+    
+

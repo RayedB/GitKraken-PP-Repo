@@ -12,8 +12,8 @@ const show = async (req,res) => {
 
 const create = (req,res) => {
     appartmentRepository.insert(req.body)
-    const appartments = appartmentRepository.list()
-    res.json(appartments)
+    // const appartments = appartmentRepository.list()
+    res.end()
 }
 
 module.exports = {index, show, create}

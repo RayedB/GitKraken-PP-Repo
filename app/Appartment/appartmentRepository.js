@@ -18,9 +18,17 @@ const get = async id => {
 }
 
 const insert = appartment => {
-    Appartment.insert(appartment)
-    return appartment
+    const appartmentToPersist = {
+        address: appartment.address,
+        size: appartment.size,
+        zip: appartment.zip,
+        neighborhood: appartment.neighborhood,
+        city: appartment.city
+    }
+    const persistedAppartment = new Appartment(appartmentToPersist)
+    persistedAppartment.save()
+    
 }
 
 
-module.exports = {list,get}
+module.exports = {list,get, insert}
