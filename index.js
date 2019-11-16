@@ -3,6 +3,10 @@ const app = express()
 const routes = require('./app/routes')
 const bodyParser = require('body-parser')
 
+const {connectDB} = require('./database/database')
+
+connectDB()
+
 app.use(bodyParser.json())
 
 app.use(routes)

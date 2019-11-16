@@ -9,17 +9,20 @@ services:
       - "9229:9229"
     command: sh -c "npm start"
     links:
-      - mongo
-  mongo:
-    image: mongo:4.2.0-bionic
+      - pg
+  pg:
+    image: postgres:12.0
+    restart: always
+    environment:
+         - POSTGRES_DB=test
+         - POSTGRES_USER=rayed
+         - POSTGRES_PASSWORD=password
     volumes:
-      - mongodata
+      - postgresdata
     ports: 
-      - "27017:27017"
-      - "27018:27018"
-      - "27019:27019"
-      - "28017:28017"
+      - "5432:5432"
     expose:
-      - "27017-27019"
+      - "5432"
+    
 volumes:
-  mongodata:
+  postgresdata:

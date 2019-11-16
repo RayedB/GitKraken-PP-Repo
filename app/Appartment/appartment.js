@@ -1,17 +1,22 @@
-const data = require('../../database/appartmentSample.json')
+const Sequelize = require('sequelize')
+const {sequelize} = require('../../database/database')
 
+ const Appartment = sequelize.define('appartment', {
+        // attributes
+        address: {
+          type: Sequelize.STRING,
+          allowNull: false
+        },
+        zip: {
+          type: Sequelize.STRING
+          // allowNull defaults to true
+        },
+        size: {
+          type: Sequelize.INTEGER
+          // allowNull defaults to true
+        }
+      }, {
+        // options
+      });
 
-const list = () => {
-    return data
-}
-
-const get = (id) => {
-    return data[id]
-} 
-
-const insert = (appartment) =>{
-    data.push(appartment)
-    return data
-} 
-
-module.exports = {list,get,insert}
+module.exports = Appartment

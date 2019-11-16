@@ -2,25 +2,20 @@ const Appartment = require('./appartment')
 const {getTenant} = require('./appartmentService')
 
 const list = () => {
-    const data = Appartment.list()
-    return data
+    return
 }
 
 const get = async id => {
 
-    const appartment = Appartment.get(id)
-    const tenant = await getTenant()
-    const appartmentAndTenant = {
-        ...appartment,
-        tenant 
-    }
-    return appartmentAndTenant
-}
-
-const insert = appartment => {
-    Appartment.insert(appartment)
+    const appartment = await Appartment.findByPk(id)
     return appartment
 }
 
+const insert = async appartment => {
+    const appt = await Appartment.create({ address: appartment.address, size: appartment.size, zip: appartment.zip })
+    console.log("Appartment's auto-generated ID:", appt.id);
+    return appt
+}
 
-module.exports = {list,get}
+
+module.exports = {list,get, insert}
