@@ -14,7 +14,6 @@ describe('Appartment Component', () => {
         // When
         const appartments = appartmentRepository.list()
         // Then
-        console.log(appartments)
         expect(Array.isArray(appartments)).toBeTruthy()
 
     })
@@ -36,7 +35,7 @@ describe('Appartment Feature - Integration test', () => {
         const call = nock('https://swapi.co').get('/api/people/1/').reply(200,{data:{name:"Yoda"}})
         // When
         const response = await appartmentRepository.get(1)
-        console.log(response)
+        (response)
         // Then
         expect(call.isDone()).toBeTruthy()
        

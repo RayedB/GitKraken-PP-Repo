@@ -1,8 +1,8 @@
-const Appartment = require('./appartment')
+const Appartment = require('./Appartment')
 const {getTenant} = require('./appartmentService')
 
-const list = () => {
-    const data = Appartment.list()
+const list = async () => {
+    const data = await Appartment.find({})
     return data
 }
 

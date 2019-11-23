@@ -1,6 +1,6 @@
 const appartmentRepository = require('./appartmentRepository')
-const index = (req,res) => {
-    const appartments = appartmentRepository.list()
+const index = async (req,res) => {
+    const appartments = await appartmentRepository.list()
     res.json(appartments) 
 }
 

@@ -8,7 +8,6 @@ const connectDB = require('./database/database')
     connectDB()
 
     app.use(bodyParser.json())
-
     app.use(routes)
 
     app.listen(port, ()=> {
