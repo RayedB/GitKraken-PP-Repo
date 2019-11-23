@@ -25,7 +25,7 @@ router.post('/register',register)
 
 //Webhook
 router.post('/webhook', (req,res) => {
-    //Tests
+    //Tests webhook
     console.log(req)
     res.end()
 })
