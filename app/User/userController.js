@@ -2,7 +2,7 @@ const userRepository = require('./userRepository')
 
 
 const login = async (req,res) => {
-    //Login a registered user
+    //Login a user
     try {
         const { email, password } = req.body
         const user = await userRepository.findUser(email,password)
