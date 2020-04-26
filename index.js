@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const routes = require('./app/routes')
 const bodyParser = require('body-parser')
-
+// Test
 const {connectDB} = require('./database/database')
 
 connectDB()
