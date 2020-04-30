@@ -13,7 +13,7 @@ const get = async id => {
 
 const insert = async appartment => {
     const appt = await Appartment.create({ address: appartment.address, size: appartment.size, zip: appartment.zip })
-    console.log("Appartment's auto-generated ID:", appt.id);
+    console.log("Appartment's auto-generated  ID:", appt.id);
     return appt
 }
 
