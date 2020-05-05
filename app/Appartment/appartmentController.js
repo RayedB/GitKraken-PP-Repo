@@ -5,7 +5,7 @@ const index = (req,res) => {
 }
 
 const show = async (req,res) => {
-    const appartment = await appartmentRepository.get(req.params.id)
+    const appartment = await   appartmentRepository.get(req.params.id)
     
     res.json(appartment)
 }
